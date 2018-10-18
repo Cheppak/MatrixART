@@ -2,23 +2,26 @@ package ar.com.sac.matrix.executor;
 
 import org.apache.commons.lang3.StringUtils;
 
-import ar.com.sac.matrix.result.QueryResult;
+import ar.com.sac.matrix.result.Result;
 
 public abstract class MatrixExecutor  {
 
-	abstract QueryResult doExecute(String script);
-	abstract boolean doValidate(String[] split);
+	abstract Result doExecute(String[] script, int[][][] matrix);
+	abstract boolean doValidate(String[] split, int n);
 
-	public QueryResult execute(String script) {
-		if(validStript(script))
-			return doExecute(script);
+	public Result execute(String script, int matrix[][][]) {
+		String[] split = getArguments(script);
+		if(validScript(split,  matrix))
+			return doExecute(split, matrix);
 		else
-			return new QueryResult(QueryResult.ERROR); 
+			return new Result(Result.ERROR); 
+	}
+	private String[] getArguments(String script) {
+		return StringUtils.split(script, " ");
 	}
 	
-	private boolean validStript(String script) {
-		String[] split = StringUtils.split(script, " ");
-		return doValidate(split);
+	private boolean validScript(String[] script, int[][][] matrix) {
+		return doValidate(script, matrix.length);
 	}
 	
 }
