@@ -3,7 +3,7 @@
 Proyecto para Experta ART
 
 ## Stack tecnológico
-El mismo fue desarrollado mediante Java (8) y para manejar dependencias del proyecto se utilizo Maven 3. Tambien utilice StringUtils de Apache para trabajar con los strings. 
+El mismo fue desarrollado mediante Java (8) y para manejar dependencias del proyecto se utilizo Maven 3. Tambien utilice StringUtils de Apache para trabajar con los strings. El ide con el que se ha desarrollado es Eclipse.
 
 ## Pruebas
 Las pruebas unitarias sobre el codigo se encuentran en MatrixManagerTestCase. Son Junit. 
