@@ -1,22 +1,24 @@
 package ar.com.sac.matrix.result;
 
-public class QueryResult {
+public class QueryResult extends Result {
 
-	public static final String SUCCESS = "SUCCESS";
-	public static final String ERROR = "ERROR";
-	
-	private String status;
+	private int value;
 
-	public QueryResult(String Status) {
-		this.status = Status;
-	}
-	
-	public String getStatus() {
-		return status;
+	public QueryResult(String Status, int value) {
+		super(Status);
+		this.value = value;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public QueryResult(String status) {
+		super(status);
+		this.value = 0;;
 	}
 	
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
 }
